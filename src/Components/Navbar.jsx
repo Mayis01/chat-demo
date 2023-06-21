@@ -2,6 +2,7 @@ import { AppBar, Button, Grid, Toolbar } from "@mui/material";
 import React, { useContext } from "react";
 import { Context } from "..";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 export default function Navbar() {
   const {auth} = useContext(Context)
@@ -11,7 +12,7 @@ export default function Navbar() {
       <Toolbar>
         <Grid container justifyContent={"flex-end"} alignItems={"center"}>
           {user ? (
-            <Button variant={"outlined"} color="success" component="div">
+            <Button onClick={() => signOut()} variant={"outlined"} color="success" component="div">
               Logout
             </Button>
           ) : (
