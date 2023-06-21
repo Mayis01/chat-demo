@@ -28,6 +28,10 @@ const Login = () => {
                     <Box p={5}>
                         <Button onClick={login} variant={"outlined"}>Login with google</Button>
                     </Box>
+
+                    <Box>
+                        v1
+                    </Box>
                 </Grid>
             </Grid>
         </Container>
