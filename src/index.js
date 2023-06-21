@@ -7,9 +7,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 
-
-
-const app = initializeApp({
+const firebaseConfig = {
   apiKey: "AIzaSyAKkNSCf37AvR2n3DbZOpi8Jg9Woksjd94",
   authDomain: "chat-demo-dfa24.firebaseapp.com",
   projectId: "chat-demo-dfa24",
@@ -17,10 +15,11 @@ const app = initializeApp({
   messagingSenderId: "11250378071",
   appId: "1:11250378071:web:5956323eefbdf859480a12",
   measurementId: "G-5CK2DHMDF5"
-})
+}
 
 export const Context = createContext(null)
 
+const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const firestore = getFirestore(app)
 
@@ -29,7 +28,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Context.Provider value={{
-      
+
       auth,
       firestore
     }}>
